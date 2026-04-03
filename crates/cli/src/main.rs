@@ -1,17 +1,19 @@
-use drift_core::audio::wav::{write_wav_i16, WavSpec};
+use drift_core::audio::wav::{WavSpec, write_wav_i16};
+use drift_core::dsp::oscillator::{Oscillator, SawOscillator, SineOscillator, SquareOscillator};
 
 fn main() -> Result<(), Box<dyn std::error::Error>> {
     let sample_rate = 44_100;
-    let duration_seconds = 2.0;
+    let duration_seconds = 5.0;
     let total_samples = (sample_rate as f32 * duration_seconds) as usize;
 
-    let frequency = 470.0; // A4
+    let mut oscillator = Oscillator::Saw(SawOscillator::new(440.0));
+
     let sample_rate_f32 = sample_rate as f32;
 
     let samples: Vec<f32> = (0..total_samples)
         .map(|n| {
             let t = n as f32 / sample_rate_f32;
-            (2.0 * std::f32::consts::PI * frequency * t).sin()
+            oscillator.next_sample()
         })
         .collect();
 

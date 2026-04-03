@@ -1,1 +1,1 @@
-/Users/solrak/dev/drift/target/debug/libdrift_core.rlib: /Users/solrak/dev/drift/crates/core/src/audio/mod.rs /Users/solrak/dev/drift/crates/core/src/audio/wav.rs /Users/solrak/dev/drift/crates/core/src/lib.rs
+/Users/solrak/dev/drift/target/debug/libdrift_core.rlib: /Users/solrak/dev/drift/crates/core/src/audio/mod.rs /Users/solrak/dev/drift/crates/core/src/audio/wav.rs /Users/solrak/dev/drift/crates/core/src/dsp/mod.rs /Users/solrak/dev/drift/crates/core/src/dsp/oscillator.rs /Users/solrak/dev/drift/crates/core/src/lib.rs
